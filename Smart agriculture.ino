@@ -1,17 +1,17 @@
 /*
 ............................................................................................................
-This code is intended for esp32 cam.
+This code is intended for Esp32.
 Tested using Arduino IDE version 2.3.4, ESP board library 3.1.1.
 The project and compilation of this code is done by PSALMOL ELECTRONICS, (Akadiri Olalekan Samuel), 
 and other online resources.
 .............................................................................................................
 */
 
-#define BLYNK_TEMPLATE_ID "TMPL2VQge-wna"
-#define BLYNK_TEMPLATE_NAME "Smart agric"
-#define BLYNK_AUTH_TOKEN "gKqizNi32JKPUPvssYok0346BXYceDt6"
-const char* ssid = "Favour's Galaxy S10+";
-const char* pass = "ffffffff9";
+#define BLYNK_TEMPLATE_ID "------------"
+#define BLYNK_TEMPLATE_NAME "----------"
+#define BLYNK_AUTH_TOKEN "-------------"
+const char* ssid = "-------------------";
+const char* pass = "-----------------";
 //const char* ssid = "A7";
 //const char* pass = "maxi1234";
 
