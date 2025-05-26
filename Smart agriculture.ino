@@ -12,8 +12,6 @@ and other online resources.
 #define BLYNK_AUTH_TOKEN "-------------"
 const char* ssid = "-------------------";
 const char* pass = "-----------------";
-//const char* ssid = "A7";
-//const char* pass = "maxi1234";
 
 #include <WiFi.h>
 #include <BlynkSimpleEsp32.h>
@@ -22,6 +20,7 @@ const char* pass = "-----------------";
 #include <DallasTemperature.h>
 BlynkTimer timer;
 // RS485 Modbus NPK sensor connections
+
 #define RXD2 16
 #define TXD2 17
 #define DE_RE 18
@@ -38,7 +37,7 @@ DeviceAddress tempSensor;
 // Soil moisture sensor
 #define SOIL_MOISTURE_PIN 34
 #define PUMP_PIN 22
-#define MOISTURE_THRESHOLD 30  // Minimum acceptable moisture level
+#define MOISTURE_THRESHOLD 30  
 int soilMoisture;
 float soilTemp;
 String pestStatus;
