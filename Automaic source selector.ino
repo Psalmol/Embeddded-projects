@@ -1,6 +1,4 @@
 #include <LiquidCrystal.h>
-
-// LCD Pin Assignments
 const int rs = 18, en = 17, d4 = 16, d5 = 15, d6 = 14, d7 = 13;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
@@ -27,7 +25,6 @@ unsigned long lcdUpdateTime = 0;
 int lcdSourceIndex = 0;  
 
 void setup() {
-  // Initialize LCD
   lcd.begin(16, 2);
   lcd.print("Initializing...");
   delay(2000);
@@ -41,7 +38,6 @@ void setup() {
   pinMode(LOAD1, OUTPUT);
   pinMode(LOAD2, OUTPUT);
   pinMode(LOAD3, OUTPUT);
-  //pinMode(LOAD4, OUTPUT);
 
   // Ensure all relays and loads are off initially
   digitalWrite(RELAY_EEDC, HIGH);
@@ -51,7 +47,6 @@ void setup() {
   digitalWrite(LOAD1, HIGH);
   digitalWrite(LOAD2, HIGH);
   digitalWrite(LOAD3, HIGH);
-  // digitalWrite(LOAD4, HIGH);
 }
 
 void loop() {
@@ -91,7 +86,6 @@ void readVoltages() {
 
 
 int determinePreferredSource() {
-  // float a, b, c;
   if (voltage[0] > THRESHOLD) return 1;  // EEDC
   if (voltage[1] > THRESHOLD) return 2;  // Solar
   if (voltage[2] > THRESHOLD) return 3;  // Generator
@@ -106,8 +100,7 @@ void handleNoSource() {
   digitalWrite(LOAD1, HIGH);
   digitalWrite(LOAD2, HIGH);
   digitalWrite(LOAD3, HIGH);
-  // digitalWrite(LOAD4, HIGH);
-
+  
   if (genStartAttempts < 3 && !genError) {
     lcd.setCursor(0, 0);
     lcd.print("No Source Found ");
@@ -168,7 +161,6 @@ void switchToSolar() {
   digitalWrite(LOAD3, HIGH);
   genStartAttempts = 0;
   genError = false;
-  //digitalWrite(LOAD4, LOW);
 }
 
 // Switch to Generator and control loads
@@ -185,7 +177,6 @@ void switchToGenerator() {
   digitalWrite(LOAD3, HIGH);
   genStartAttempts = 0;
   genError = false;
-  // digitalWrite(LOAD4, LOW);
 }
 
 // Update LCD Display with voltage levels
